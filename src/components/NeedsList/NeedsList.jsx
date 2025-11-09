@@ -1,17 +1,15 @@
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import needsData from "../../needs.json";
 import styles from "./NeedsList.module.css";
-import { BsSortNumericDown } from "react-icons/bs";
-import { BsSortNumericUpAlt } from "react-icons/bs";
+import { BsSortNumericDown, BsSortNumericUpAlt } from "react-icons/bs";
 import { GrSort } from "react-icons/gr";
 
 function NeedsList() {
-	const [needs, setNeeds] = useState(needsData);
 	const [search, setSearch] = useState("");
 	const [sortOrder, setSortOrder] = useState(null); // null | "asc" | "desc"
 
 	const filteredNeeds = useMemo(() => {
-		let filtered = needs.filter((n) =>
+		let filtered = needsData.filter((n) =>
 			n.item.toLowerCase().includes(search.toLowerCase())
 		);
 
@@ -22,7 +20,7 @@ function NeedsList() {
 		}
 
 		return filtered;
-	}, [needs, search, sortOrder]);
+	}, [search, sortOrder]);
 
 	const toggleSort = () => {
 		setSortOrder((prev) =>

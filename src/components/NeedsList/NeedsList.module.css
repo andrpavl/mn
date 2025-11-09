@@ -1,60 +1,127 @@
-.tableContainer {
-    font-family: Arial, sans-serif;
-}
+ .tableContainer {
+     font-family: Arial, sans-serif;
+     max-width: 700px;
+     margin: 0 auto;
 
-table {
-    font-family: "Montserrat", sans-serif;
-    border-collapse: collapse;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    overflow: hidden;
-
-}
-
-thead {
-    background-color: #4B5320;
-    color: white;
-}
-
-th,
-td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-tr:nth-child(even) {
-    background-color: #eeefef;
-}
+ }
 
 
-h2 {
-    text-align: center;
-    margin-bottom: 15px;
-}
+ .tableContainer table {
+     width: 100%;
+     table-layout: fixed;
+ }
 
-.sortable {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+ table {
+     font-family: "Montserrat", sans-serif;
+     border-collapse: collapse;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+     border-radius: 8px;
+     overflow: hidden;
 
-.controls>label {
-    font-family: "Montserrat", sans-serif;
-    margin: 15px 10px;
-    font-weight: bold;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+ }
 
-}
+ thead {
+     background-color: #4B5320;
+     color: white;
+ }
 
-.searchInput {
-    padding: 6px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 250px;
-}
+ th,
+ td {
+     padding: 12px;
+     text-align: left;
+     border-bottom: 1px solid #ddd;
+     vertical-align: middle;
+
+ }
+
+ th:nth-child(3),
+ td:nth-child(3) {
+     text-align: right;
+ }
+
+ th:nth-child(1),
+ td:nth-child(1) {
+     text-align: center;
+     width: 50px;
+ }
+
+ tr:nth-child(even) {
+     background-color: #eeefef;
+ }
+
+
+ h2 {
+     text-align: center;
+     margin-bottom: 15px;
+ }
+
+ .sortable {
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     justify-content: flex-end;
+ }
+
+ .controls>label {
+     font-family: "Montserrat", sans-serif;
+     margin: 15px 10px;
+     font-weight: bold;
+     color: #333;
+     display: flex;
+     align-items: center;
+     gap: 12px;
+
+ }
+
+ .searchInput {
+     padding: 6px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     font-size: 16px;
+     width: 250px;
+ }
+
+
+
+ @media (max-width: 768px) {
+     .tableContainer {
+         max-width: 100%;
+         padding: 0 10px;
+     }
+
+     table {
+         font-size: 14px;
+         box-shadow: none;
+     }
+
+     th,
+     td {
+         padding: 8px;
+     }
+
+     .searchInput {
+         width: 100%;
+         font-size: 14px;
+     }
+
+     .controls>label {
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 6px;
+         margin: 10px 0;
+     }
+ }
+
+ @media (max-width: 480px) {
+
+     th:nth-child(1),
+     td:nth-child(1) {
+         width: 30px;
+     }
+
+     .sortable svg {
+         width: 16px;
+         height: 16px;
+     }
+ }
