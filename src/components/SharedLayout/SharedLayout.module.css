@@ -1,0 +1,27 @@
+.header {
+    background-color: #585858;
+    padding: 1rem;
+}
+
+.nav {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.navLink {
+    color: #ddd;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: large;
+    transition: color 0.2s ease;
+}
+
+.navLink:hover {
+    color: #fff;
+}
+
+.navLink.active {
+    color: #00bcd4;
+    border-bottom: 2px solid #00bcd4;
+}

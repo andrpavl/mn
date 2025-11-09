@@ -1,17 +1,18 @@
+import { Route, Routes } from "react-router-dom";
+import SharedLayout from "./components/SharedLayout/SharedLayout";
+import HomePage from "./pages/HomePage";
 import FundraisingList from "./components/Fundraising/Fundraising";
-import NeedsList from "./components/NeedsList/NeedsList";
 import Streams from "./components/Streams/Streams";
-import styles from "./App.module.css";
 
 function App() {
-	return (
-		<div className={styles.App}>
-			<NeedsList />
-			<div className={styles.adds}>
-				<FundraisingList />
-				<Streams />
-			</div>
-		</div>
+  return (
+    <Routes>
+      <Route path="/" element={<SharedLayout />} >
+        <Route index element={<HomePage />} />
+        <Route path="fundraising" element={<FundraisingList />} />
+        <Route path="streams" element={<Streams />} />
+      </Route>
+    </Routes> 		
 	);
 }
 
