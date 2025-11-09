@@ -57,11 +57,9 @@
 
  .sortable {
      cursor: pointer;
-     display: flex;
-     align-items: center;
      gap: 8px;
-     justify-content: flex-end;
  }
+
 
  .controls>label {
      font-family: "Montserrat", sans-serif;
