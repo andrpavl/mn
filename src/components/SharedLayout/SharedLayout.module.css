@@ -25,3 +25,9 @@
     color: #00bcd4;
     border-bottom: 2px solid #00bcd4;
 }
+
+ @media (max-width: 768px) {
+    .navLink {
+      font-size: 13px;
+    }
+ }
